@@ -13,6 +13,14 @@
     .contact-info h3 { font-size: 1rem; font-weight: 700; color: var(--yellow); letter-spacing: 0.2em; margin-bottom: 1rem; }
     .contact-info p { margin-bottom: 0.75rem; color: var(--gray); }
     .contact-info a { color: var(--white); }
+    .contact-form label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--yellow);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+    }
     .contact-form input,
     .contact-form select {
       width: 100%;
@@ -53,6 +61,12 @@
       filter: invert(1);
       opacity: 0.7;
     }
+    .contact-form .input-hint {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: -0.5rem;
+      margin-bottom: 0.75rem;
+    }
     .contact-form button {
       width: 100%;
       padding: 1rem 2rem;
@@ -80,11 +94,13 @@
       .contact-info h3 { text-align: center; }
       .contact-info p { text-align: center; }
       .book-links { justify-content: center; }
-      .contact-grid > div:last-child { order: 2; width: 100%; min-width: 0; max-width: 100%; }
+      .contact-grid > div:last-child { order: 2; width: 100%; min-width: 0; max-width: 100%; padding: 1.25rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); }
       .contact-grid > div:last-child h3 { text-align: center; margin-bottom: 1rem; }
       .contact-form { max-width: 100%; width: 100%; }
       .contact-form input,
-      .contact-form select { width: 100%; max-width: 100%; box-sizing: border-box; }
+      .contact-form select { width: 100%; max-width: 100%; box-sizing: border-box; min-height: 48px; }
+      .contact-form input[type="date"],
+      .contact-form input[type="time"] { border: 1px solid rgba(245,215,66,0.4); color: #fff; -webkit-text-fill-color: #fff; }
       .contact-form button { width: 100%; max-width: 100%; box-sizing: border-box; }
       .contact-map-wrap { margin-top: 2rem; text-align: center; }
       .contact-map-wrap h3 { text-align: center; }
@@ -132,13 +148,21 @@
       <div>
         <h3 style="color: var(--yellow); margin-bottom: 1rem; letter-spacing: 0.1em;">RESERVE A TABLE</h3>
         <form class="contact-form">
-          <input type="text" name="name" placeholder="Your name" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="tel" name="phone" placeholder="Phone">
-          <input type="date" name="date" min="2026-02-01" required>
-          <input type="time" name="time" required>
-          <select name="guests" required>
-            <option value="">Guests</option>
+          <label for="res-name">Name</label>
+          <input id="res-name" type="text" name="name" placeholder="Your name" required>
+          <label for="res-email">Email</label>
+          <input id="res-email" type="email" name="email" placeholder="Email" required>
+          <label for="res-phone">Phone</label>
+          <input id="res-phone" type="tel" name="phone" placeholder="Phone">
+          <label for="res-date">Date</label>
+          <span class="input-hint">Tap to select date</span>
+          <input id="res-date" type="date" name="date" min="2026-02-01" required>
+          <label for="res-time">Time</label>
+          <span class="input-hint">Tap to select time</span>
+          <input id="res-time" type="time" name="time" required>
+          <label for="res-guests">Number of guests</label>
+          <select id="res-guests" name="guests" required>
+            <option value="">Select guests</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
