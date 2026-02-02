@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 95" fill="none">
+  <defs>
+    <linearGradient id="neonOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e07d2a"/>
+      <stop offset="50%" style="stop-color:#f0a030"/>
+      <stop offset="100%" style="stop-color:#e07d2a"/>
+    </linearGradient>
+    <linearGradient id="glassRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff4444"/>
+      <stop offset="100%" style="stop-color:#cc2222"/>
+    </linearGradient>
+    <linearGradient id="strawBlue" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#4488ff"/>
+      <stop offset="100%" style="stop-color:#66aaff"/>
+    </linearGradient>
+    <filter id="neonGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feFlood flood-color="#d4af37" flood-opacity="0.5"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="redGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-color="#ff4444" flood-opacity="0.4"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Martini glass (red neon) -->
+  <g filter="url(#redGlow)">
+    <path d="M25 42 L42 12 L59 42 Z" fill="none" stroke="url(#glassRed)" stroke-width="3.5" stroke-linejoin="round"/>
+    <line x1="42" y1="42" x2="42" y2="55" stroke="url(#glassRed)" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="42" cy="58" rx="9" ry="3.5" fill="none" stroke="url(#glassRed)" stroke-width="2.5"/>
+    <!-- Blue straw -->
+    <path d="M28 48 L38 15" stroke="url(#strawBlue)" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Yellow citrus garnish -->
+    <circle cx="50" cy="15" r="4" fill="none" stroke="#ffcc00" stroke-width="2"/>
+    <!-- Red olive/cherry -->
+    <circle cx="55" cy="18" r="2.5" fill="none" stroke="#ff4444" stroke-width="1.5"/>
+  </g>
+  <!-- Drunkyard text (warm orange/amber, flowing script) -->
+  <text x="75" y="42" font-family="Georgia, 'Brush Script MT', cursive" font-size="40" font-weight="600" fill="url(#neonOrange)" filter="url(#neonGlow)">Drunkyard</text>
+  <!-- Tagline -->
+  <text x="75" y="72" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="0.25em" fill="rgba(255,255,255,0.95)">BUILT FOR THE NIGHT.</text>
+</svg>

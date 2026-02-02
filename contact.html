@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Drunkyard — Dombivli East</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="template.css">
+  <style>
+    .contact-page { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
+    .contact-info h3 { font-size: 1rem; font-weight: 700; color: var(--yellow); letter-spacing: 0.2em; margin-bottom: 1rem; }
+    .contact-info p { margin-bottom: 0.75rem; color: var(--gray); }
+    .contact-info a { color: var(--white); }
+    .contact-form input,
+    .contact-form select {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white);
+      font-family: var(--font), inherit;
+      font-size: 1rem;
+      border-radius: 0;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .contact-form input::placeholder { color: rgba(255,255,255,0.5); }
+    .contact-form input:focus,
+    .contact-form select:focus {
+      outline: none;
+      border-color: var(--yellow);
+      box-shadow: 0 0 0 1px var(--yellow);
+    }
+    .contact-form select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23f5d742' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+    .contact-form select option {
+      background: #0a0a0a;
+      color: var(--white);
+    }
+    .contact-form input[type="time"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      opacity: 0.7;
+    }
+    .contact-form input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+      opacity: 0.7;
+    }
+    .contact-form button {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: var(--yellow);
+      color: #0a0a0a;
+      border: none;
+      font-family: var(--font), inherit;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .contact-form button:hover { opacity: 0.9; }
+    .book-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+    .book-links a { padding: 0.8rem 1.5rem; border: 2px solid var(--yellow); color: var(--yellow); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; }
+    .contact-map-wrap { margin-top: 3rem; }
+    .contact-map-wrap h3 { font-size: 1rem; font-weight: 700; color: var(--yellow); letter-spacing: 0.2em; margin-bottom: 1rem; }
+    .contact-map-embed { width: 100%; height: 280px; border: 0; display: block; background: var(--black); filter: grayscale(20%) contrast(1.05); }
+    .contact-map-btn { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; padding: 1rem 1.5rem; background: var(--yellow); color: #0a0a0a; text-decoration: none; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.1em; transition: opacity 0.2s; }
+    .contact-map-btn:hover { opacity: 0.9; }
+    @media (max-width: 768px) {
+      .contact-page { padding: 1.5rem 1rem 3rem; max-width: 100%; overflow-x: hidden; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; margin-top: 1.5rem; align-items: center; }
+      .contact-info { text-align: center; order: 1; }
+      .contact-info h3 { text-align: center; }
+      .contact-info p { text-align: center; }
+      .book-links { justify-content: center; }
+      .contact-grid > div:last-child { order: 2; width: 100%; min-width: 0; max-width: 100%; }
+      .contact-grid > div:last-child h3 { text-align: center; margin-bottom: 1rem; }
+      .contact-form { max-width: 100%; width: 100%; }
+      .contact-form input,
+      .contact-form select { width: 100%; max-width: 100%; box-sizing: border-box; }
+      .contact-form button { width: 100%; max-width: 100%; box-sizing: border-box; }
+      .contact-map-wrap { margin-top: 2rem; text-align: center; }
+      .contact-map-wrap h3 { text-align: center; }
+      .contact-map-embed { height: 240px; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="Drunkyard" class="logo-img"><span class="nav-brand">DRUNKYARD</span></a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" target="_self">Menu</a></li>
+      <li><a href="reviews.html" target="_self">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <img src="images/logo.png" alt="Drunkyard" style="height: 70px; margin-bottom: 1rem;">
+    <h1>CONTACT</h1>
+    <p>Built for the Night. • Reserve your table</p>
+  </header>
+
+  <main class="contact-page">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>FIND US</h3>
+        <p>304, 3rd Floor, GNP Galleria</p>
+        <p>Junction of Kalyan Shil Rd & Regency Anantam Rd</p>
+        <p>Dombivli East, Maharashtra 421203</p>
+        <h3>HOURS</h3>
+        <p>3pm – 1:30am</p>
+        <h3>RSVP</h3>
+        <p><a href="tel:08828826606">088288 26606</a></p>
+        <p>882 882 6606 / 6605 / 6604</p>
+        <h3>BOOK ONLINE</h3>
+        <div class="book-links">
+          <a href="https://www.eazydiner.com/mumbai/drunkyard-dombivali-east-thane-region-687263" target="_blank" rel="noopener">EazyDiner</a>
+          <a href="https://www.zomato.com/mumbai/drunkyard-1-dombivali-east-thane" target="_blank" rel="noopener">Zomato</a>
+          <a href="https://www.swiggy.com/restaurants/drunkyard-dombivli-east-mumbai-776439/dineout" target="_blank" rel="noopener">Swiggy</a>
+        </div>
+      </div>
+      <div>
+        <h3 style="color: var(--yellow); margin-bottom: 1rem; letter-spacing: 0.1em;">RESERVE A TABLE</h3>
+        <form class="contact-form">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="tel" name="phone" placeholder="Phone">
+          <input type="date" name="date" min="2026-02-01" required>
+          <input type="time" name="time" required>
+          <select name="guests" required>
+            <option value="">Guests</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6+</option>
+          </select>
+          <button type="submit">CONFIRM</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="contact-map-wrap">
+      <h3>LOCATE US</h3>
+      <a href="https://www.google.com/maps/search/?api=1&query=Drunkyard+GNP+Galleria+Dombivli+East+421203" target="_blank" rel="noopener" class="contact-map-btn" aria-label="Open Drunkyard location in Google Maps">
+        📍 Open in Google Maps — Get directions
+      </a>
+      <iframe
+        class="contact-map-embed"
+        src="https://maps.google.com/maps?q=GNP+Galleria+Dombivli+East+421203&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Drunkyard location on map">
+      </iframe>
+      <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--gray);">Tap the button above to open in Google Maps or your device’s Maps app for directions.</p>
+    </div>
+
+    <div style="margin-top: 2rem; text-align: center;">
+      <p class="follow" style="margin-bottom: 1rem;">FOLLOW US</p>
+      <a href="https://www.instagram.com/thedrunkyard_dombivli" target="_blank" rel="noopener" style="color: var(--yellow);">Instagram @thedrunkyard_dombivli</a>
+    </div>
+  </main>
+
+  <footer class="footer-new">
+    <div class="footer-new-inner">
+      <div></div>
+      <div class="footer-new-contact">
+        <p>&copy; 2025 Drunkyard Dombivli</p>
+      </div>
+      <div></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.querySelector('.contact-form')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const name = form.querySelector('[name="name"]')?.value?.trim() || '';
+      const email = form.querySelector('[name="email"]')?.value?.trim() || '';
+      const phone = form.querySelector('[name="phone"]')?.value?.trim() || '';
+      const date = form.querySelector('[name="date"]')?.value || '';
+      const time = form.querySelector('[name="time"]')?.value || '';
+      const guests = form.querySelector('[name="guests"]')?.value || '';
+      const msg = 'Hi Drunkyard! I would like to reserve a table.\n\n*Name:* ' + name + '\n*Email:* ' + email + '\n*Phone:* ' + (phone || '—') + '\n*Date:* ' + date + '\n*Time:* ' + time + '\n*Guests:* ' + guests + '\n\nPlease confirm. Thank you!';
+      const whatsappNum = '918828826606';
+      const url = 'https://wa.me/' + whatsappNum + '?text=' + encodeURIComponent(msg);
+      window.open(url, '_blank', 'noopener');
+      alert('Opening WhatsApp with your reservation details. Send the message to confirm your booking.');
+      form.reset();
+    });
+  </script>
+</body>
+</html>

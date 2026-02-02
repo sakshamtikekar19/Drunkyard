@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews | Drunkyard — Dombivli East</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="template.css">
+  <style>
+    .reviews-page { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    .reviews-cta {
+      text-align: center;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      background: rgba(245, 215, 66, 0.08);
+      border: 2px solid var(--yellow-dim);
+    }
+    .reviews-cta h2 { font-size: 1.5rem; color: var(--yellow); margin-bottom: 1rem; letter-spacing: 0.1em; }
+    .reviews-cta p { color: var(--gray); margin-bottom: 1.5rem; }
+    .btn-google-review {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--yellow);
+      color: #0a0a0a;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    .btn-google-review:hover { opacity: 0.9; }
+    .featured-reviews h3 { font-size: 1.25rem; color: var(--yellow); letter-spacing: 0.15em; margin-bottom: 1.5rem; }
+    .reviews-list { display: flex; flex-direction: column; gap: 1.5rem; }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="Drunkyard" class="logo-img"><span class="nav-brand">DRUNKYARD</span></a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" target="_self">Menu</a></li>
+      <li><a href="reviews.html" target="_self">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <img src="images/logo.png" alt="Drunkyard" style="height: 70px; margin-bottom: 1rem;">
+    <h1>REVIEWS</h1>
+    <p>Built for the Night. • What our guests say</p>
+  </header>
+
+  <main class="reviews-page">
+    <div class="reviews-cta">
+      <h2>Share your experience</h2>
+      <p>Your feedback helps us serve you better. Leave a review on Google and get featured on our website.</p>
+      <a href="https://www.google.com/maps/search/Drunkyard+Dombivli+East" target="_blank" rel="noopener" class="btn-google-review">WRITE A GOOGLE REVIEW</a>
+    </div>
+
+    <section class="featured-reviews">
+      <h3>Featured reviews</h3>
+      <div class="reviews-list" id="reviews-list"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="reviews.js"></script>
+</body>
+</html>
